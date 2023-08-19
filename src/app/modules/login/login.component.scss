@@ -1,0 +1,43 @@
+.error {
+    margin-top: 1px;
+    background: yellow;
+    padding: 0.5em;
+    display: block;
+    font-size: 0.9em;
+    margin-bottom: 1px;
+}
+
+.errspan {
+    float: right;
+    margin-right: 6px;
+    margin-top: -25px;
+    position: relative;
+    z-index: 0;
+    color: red;
+}
+
+.spanStyle {
+    position: absolute;
+    left: 20px;
+    top: 12px;
+    color: #cc2222;
+}
+
+.form-control:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: #28a745;
+    outline: 0px;
+    box-shadow: 0 0 0 0.25rem rgb(13 110 253/2%);
+}
+
+.gradient-custom-2 {
+    /* fallback for old browsers */
+    background: #fccb90;
+  
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+  
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+  }

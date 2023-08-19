@@ -1,0 +1,37 @@
+:host {
+    display: block;
+}
+
+.content-wrapper > *:first-child {
+    display: block;
+}
+
+.main-sidebar {
+    transition: margin-left 0.3s ease-in-out, width 0.3s ease-in-out;
+    background: linear-gradient(to bottom, #ffffff, #ffffff);
+}
+
+.content-wrapper,
+.main-footer {
+    background-color: white;
+}
+
+.main-footer {
+    padding: 2px;
+}
+
+.content-wrapper {
+    margin-top: 2px;
+    max-height: 545px;
+    min-height: 545px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.main-header {
+    height: 45px;
+}
+
+// .control-sidebar-dark {
+//     background-color: #ffeeaa;
+// }

@@ -1,0 +1,83 @@
+:host {
+    display: block;
+}
+
+.brand-image {
+    float: left;
+    line-height: 0.8;
+    // margin: -1px 8px 0 6px;
+    margin: 0px 4px 0 3px;
+    opacity: 0.8;
+    --pf-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.010),
+        0 6px 6px rgba(0, 0, 0, 0.03) !important;
+}
+
+.img-circle {
+    --pf-box-shadow: 0 3px 6px #00000029, 0 3px 6px #0000003b !important;
+}
+
+.image {
+    padding-left: 8px;
+}
+
+.info {
+    padding-left: 5px;
+    font-size: 18px;
+}
+
+.form-inline {
+    justify-content: center;
+}
+
+.sidebar {
+    overflow-y: auto;
+    max-height: 530px;
+    padding-left: 4px;
+    padding-right: 2px;
+
+    & .user-panel {
+        position: relative;
+        border-bottom: 1px solid #FD6432;
+        // border-bottom: 1px solid #FFFaaa;
+        // border-bottom: 1px solid #cb4545;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        padding-bottom: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    & a {
+        color: #000;
+        text-decoration: none;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
+a.brand-link {
+    text-decoration: none;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #FD6432;
+}
+
+.brand-link {
+    background-color: #ffffff;
+    color: #000;
+    height: 45px;
+}
+
+.brand-link .pushmenu:hover,
+.brand-link:hover {
+    color: #cb4545;
+}
+
+.info a:hover {
+    color: #cb4545;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}

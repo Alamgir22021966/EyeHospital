@@ -1,0 +1,559 @@
+<section class="content">
+    <div class="container-flex">
+        <form [formGroup]="form" autocomplete="off">
+            <div formGroupName="Prescription">
+                <div class="col-md-8 offset-2 text-center">
+                    <div class="row mb-1">
+                        <div class="col-md-5">
+                            <div class="row">
+                                <label for="ApptNo"
+                                    class="col-sm-6 col-form-label text-right no-padding">ApptNo:</label>
+                                <div class="col-sm-6" style="padding-right: 1px;">
+                                    <input type="text" formControlName="ApptNo" class="form-control shadow-none"
+                                        id="ApptNo" placeholder="" readonly="true" [attr.disabled]="true"
+                                        style="background: #fffeee;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-1">
+                        <div class="col-md-5">
+                            <div class="row">
+                                <label for="PID" class="col-sm-6 col-form-label text-right no-padding">PID:</label>
+                                <div class="col-sm-6" style="padding-right: 1px;">
+                                    <input type="text" formControlName="PID" class="form-control shadow-none" id="PID"
+                                        placeholder="" readonly="true" [attr.disabled]="true"
+                                        style="background: #fffeee;">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="row">
+                                <label for="Name" class="col-sm-5 col-form-label text-right no-padding">Patient
+                                    Name:</label>
+                                <div class="col-sm-7" style="padding-right: 1px;">
+                                    <input type="text" formControlName="Name" class="form-control shadow-none" id="Name"
+                                        placeholder="" readonly="true" [attr.disabled]="true"
+                                        style="background: #fffeee;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="row">
+                                <label for="Sex" class="col-sm-6 col-form-label text-right no-padding">
+                                    Sex:</label>
+                                <div class="col-sm-6" style="padding-right: 1px;">
+                                    <input type="text" formControlName="Sex" class="form-control shadow-none" id="Sex"
+                                        placeholder="" readonly="true" [attr.disabled]="true"
+                                        style="background: #fffeee;">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="row">
+                                <label for="Age" class="col-sm-5 col-form-label text-right no-padding">Age:</label>
+                                <div class="col-sm-3" style="padding-right: 1px;">
+                                    <input type="text" formControlName="Age" class="form-control shadow-none" id="Age"
+                                        placeholder="" readonly="true" [attr.disabled]="true"
+                                        style="background: #fffeee;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row mt-2">
+                <div class="col-md-10 offset-1 text-center mt-3" style="padding-right: 1px; margin-right: 0px;">
+                    <h4 style="margin-bottom: 0px !important;">PRESCRIPTION FOR GLASSES</h4>
+                    <div class="row">
+                        <div class="col-md-6" style="padding-right: 2px;">
+                            <div class="shadow-sm card mt-0">
+                                <div class="card-body">
+                                    <div formGroupName="GlassRight">
+                                        <fieldset>
+                                            <legend style="margin-bottom: 0px !important;">RIGHT</legend>
+                                            <div class="col-sm-12">
+                                                <div class="row no-padding bottom-padding">
+                                                    <div class="col-sm-3 text-center" style="padding-right: 1px; ">
+                                                        <label class="control-label">SPH:</label>
+                                                        <input type="text" formControlName="SPH"
+                                                            class="form-control form-control-sm" id="SPH" name="SPH"
+                                                            placeholder="SPH" tooltip="SPH" placement="top"
+                                                            theme="light" NumberOnly>
+                                                    </div>
+                                                    <div class="col-sm-3 text-center"
+                                                        style="padding-left: 1px;padding-right: 1px;">
+                                                        <label class="control-label">CYL:</label>
+                                                        <input type="text" formControlName="CYL"
+                                                            class="form-control form-control-sm" id="CYL" name="CYL"
+                                                            placeholder="CYL" tooltip="CYL" placement="top"
+                                                            theme="light" NumberOnly>
+                                                    </div>
+                                                    <div class="col-sm-3 text-center"
+                                                        style="padding-left: 1px;padding-right: 1px;">
+                                                        <label class="control-label">AXIS:</label>
+                                                        <input type="text" formControlName="AXIS"
+                                                            class="form-control form-control-sm" id="AXIS"
+                                                            placeholder="AXIS" tooltip="AXIS" placement="top"
+                                                            theme="light" NumberOnly>
+                                                    </div>
+                                                    <div class="col-sm-3 text-center"
+                                                        style="padding-left: 1px;padding-right: 1px;">
+                                                        <label class="control-label">VA:</label>
+                                                        <input type="text" formControlName="VA"
+                                                            class="form-control form-control-sm" id="VA"
+                                                            placeholder="VA" tooltip="VA" placement="top" theme="light"
+                                                            NumberOnly>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6" style="padding-right: 2px;">
+                            <div class="shadow-sm card mt-0">
+                                <div class="card-body">
+                                    <fieldset>
+                                        <legend style="margin-bottom: 0px !important;">LEFT</legend>
+                                        <div formGroupName="GlassLeft">
+                                            <div class="col-sm-12">
+                                                <div class="row no-padding bottom-padding">
+                                                    <div class="col-sm-3 text-center" style="padding-right: 1px; ">
+                                                        <label class="control-label">SPH:</label>
+                                                        <input type="text" formControlName="SPH"
+                                                            class="form-control form-control-sm" id="SPH" name="SPH"
+                                                            placeholder="SPH" tooltip="SPH" placement="top"
+                                                            theme="light" NumberOnly>
+                                                    </div>
+                                                    <div class="col-sm-3 text-center"
+                                                        style="padding-left: 1px;padding-right: 1px;">
+                                                        <label class="control-label">CYL:</label>
+                                                        <input type="text" formControlName="CYL"
+                                                            class="form-control form-control-sm" id="CYL" name="CYL"
+                                                            placeholder="CYL" tooltip="CYL" placement="top"
+                                                            theme="light" NumberOnly>
+                                                    </div>
+                                                    <div class="col-sm-3 text-center"
+                                                        style="padding-left: 1px;padding-right: 1px;">
+                                                        <label class="control-label">AXIS:</label>
+                                                        <input type="text" formControlName="AXIS"
+                                                            class="form-control form-control-sm" id="AXIS"
+                                                            placeholder="AXIS" tooltip="AXIS" placement="top"
+                                                            theme="light" NumberOnly>
+                                                    </div>
+                                                    <div class="col-sm-3 text-center"
+                                                        style="padding-left: 1px;padding-right: 1px;">
+                                                        <label class="control-label">VA:</label>
+                                                        <input type="text" formControlName="VA"
+                                                            class="form-control form-control-sm" id="VA"
+                                                            placeholder="VA" tooltip="VA" placement="top" theme="light"
+                                                            NumberOnly>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-1">
+                <div class="col-md-10 offset-1" style="padding-right: 1px; margin-right: 0px;">
+                    <div formGroupName="GlassLeft">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <label for="NearAdd" class="col-sm-4 col-form-label text-right no-padding">
+                                                Near Add:</label>
+                                            <div class="col-sm-8" style="padding-right: 1px;">
+                                                <input type="text" formControlName="NearAdd"
+                                                    class="form-control shadow-none" id="NearAdd">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <label for="IPD"
+                                                class="col-sm-4 col-form-label text-right no-padding">IPD:</label>
+                                            <div class="col-sm-8" style="padding-right: 1px;">
+                                                <input type="text" formControlName="IPD"
+                                                    class="form-control shadow-none" id="IPD">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row mt-2">
+                <div class="col-md-10 offset-1" style="padding-right: 1px; margin-right: 0px;">
+                    <div formGroupName="Remarks">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <label for="NearAdd" class="col-sm-12 col-form-label text-right no-padding">
+                                            Remarks:</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-5">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-check">
+                                            <input mdbCheckbox class="form-check-input" type="checkbox" value=""
+                                                formControlName="Unifocal" id="Unifocal" />
+                                            <label class="form-check-label" for="flexCheckDisabled"> Unifocal
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-check">
+                                            <input mdbCheckbox class="form-check-input" type="checkbox" value=""
+                                                formControlName="Bifocal" id="Bifocal" />
+                                            <label class="form-check-label" for="flexCheckDisabled"> Bifocal
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-check">
+                                            <input mdbCheckbox class="form-check-input" type="checkbox" value=""
+                                                formControlName="Varilux" id="Varilux" />
+                                            <label class="form-check-label" for="flexCheckDisabled"> Varilux
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-check">
+                                            <input mdbCheckbox class="form-check-input" type="checkbox" value=""
+                                                formControlName="Photosun" id="Photosun" />
+                                            <label class="form-check-label" for="flexCheckDisabled"> Photosun
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-check">
+                                            <input mdbCheckbox class="form-check-input" type="checkbox" value=""
+                                                formControlName="Glass" id="Glass" />
+                                            <label class="form-check-label" for="flexCheckDisabled"> Glass
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-check">
+                                            <input mdbCheckbox class="form-check-input" type="checkbox" value=""
+                                                formControlName="Plastic" id="Plastic" />
+                                            <label class="form-check-label" for="flexCheckDisabled"> Plastic
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-check">
+                                            <input mdbCheckbox class="form-check-input" type="checkbox" value=""
+                                                formControlName="Antireflection" id="Antireflection" />
+                                            <label class="form-check-label" for="flexCheckDisabled"> Antireflection
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-1">
+                <div class="col-md-10 offset-1" style="padding-right: 1px; margin-right: 0px;">
+                    <div formGroupName="Use">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <label for="NearAdd" class="col-sm-12 col-form-label text-right no-padding">
+                                            Use:</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-5">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-check">
+                                            <input mdbCheckbox class="form-check-input" type="checkbox" value=""
+                                                formControlName="Constant" id="Constant" />
+                                            <label class="form-check-label" for="flexCheckDisabled"> Constant
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-check">
+                                            <input mdbCheckbox class="form-check-input" type="checkbox" value=""
+                                                formControlName="Distant" id="Distant" />
+                                            <label class="form-check-label" for="flexCheckDisabled"> Distant
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-check">
+                                            <input mdbCheckbox class="form-check-input" type="checkbox" value=""
+                                                formControlName="Near" id="Near" />
+                                            <label class="form-check-label" for="flexCheckDisabled"> Near
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row mt-2">
+                <div class="col-md-10 offset-1 mt-3" style="padding-right: 1px; margin-right: 0px;">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="shadow-sm card mt-0">
+                                <div class="card-body">
+                                    <div formGroupName="ExaminationRight">
+                                        <fieldset>
+                                            <legend style="margin-bottom: 0px !important;text-align: center;">RIGHT EYE</legend>
+                                            <h5>EXAMINATION</h5>
+                                            <div class="col-sm-12">
+                                                <div class="row">
+                                                    <label for="Vision"
+                                                        class="col-sm-4 col-form-label">Vision:</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" formControlName="Vision"
+                                                            class="form-control shadow-none" id="Vision" placeholder="">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <label for="P.H."
+                                                        class="col-sm-4 col-form-label">P.H.:</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" formControlName="PH"
+                                                            class="form-control shadow-none" id="P.H." placeholder="">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <label for="Auto Refraction"
+                                                        class="col-sm-4 col-form-label">Auto Refraction:</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" formControlName="AutoRefraction"
+                                                            class="form-control shadow-none" id="Auto Refraction" placeholder="">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <label for="Glasses"
+                                                        class="col-sm-4 col-form-label">Glasses:</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" formControlName="Glasses"
+                                                            class="form-control shadow-none" id="Glasses" placeholder="">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <label for="OrbitAdnexa"
+                                                        class="col-sm-4 col-form-label">Orbit & Adnexa:</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" formControlName="OrbitAdnexa"
+                                                            class="form-control shadow-none" id="OrbitAdnexa" placeholder="">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <label for="AntSegment"
+                                                        class="col-sm-4 col-form-label">Ant. Segment:</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" formControlName="AntSegment"
+                                                            class="form-control shadow-none" id="AntSegment" placeholder="">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <label for="Fundus"
+                                                        class="col-sm-4 col-form-label">Fundus:</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" formControlName="Fundus"
+                                                            class="form-control shadow-none" id="Fundus" placeholder="">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <label for="SpecialTests"
+                                                        class="col-sm-4 col-form-label">Special Tests:</label>
+                                                    <!-- <div class="col-sm-8">
+                                                        <input type="text" formControlName="SpecialTests"
+                                                            class="form-control shadow-none" id="SpecialTests" placeholder="">
+                                                    </div> -->
+                                                </div>
+                                                <div class="row">
+                                                    <label for="I.O.P"
+                                                        class="col-sm-4 col-form-label">I.O.P:</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" formControlName="IOP"
+                                                            class="form-control shadow-none" id="I.O.P" placeholder="">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <label for="SacTest"
+                                                        class="col-sm-4 col-form-label">Sac Test:</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" formControlName="SacTest"
+                                                            class="form-control shadow-none" id="SacTest" placeholder="">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <label for="Comments"
+                                                        class="col-sm-4 col-form-label">Comments:</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" formControlName="Comments"
+                                                            class="form-control shadow-none" id="Comments" placeholder="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="shadow-sm card mt-0">
+                                <div class="card-body">
+                                    <fieldset>
+                                        <legend style="margin-bottom: 0px !important;text-align: center;">LEFT EYE</legend>
+                                        <div formGroupName="ExaminationLeft">
+                                            <div class="col-sm-12">
+                                                <h5>EXAMINATION</h5>
+                                                <div class="col-sm-12">
+                                                    <div class="row">
+                                                        <label for="Vision"
+                                                            class="col-sm-4 col-form-label">Vision:</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" formControlName="Vision"
+                                                                class="form-control shadow-none" id="Vision" placeholder="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <label for="P.H."
+                                                            class="col-sm-4 col-form-label">P.H.:</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" formControlName="PH"
+                                                                class="form-control shadow-none" id="P.H." placeholder="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <label for="Auto Refraction"
+                                                            class="col-sm-4 col-form-label">Auto Refraction:</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" formControlName="Auto Refraction"
+                                                                class="form-control shadow-none" id="Auto Refraction" placeholder="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <label for="Glasses"
+                                                            class="col-sm-4 col-form-label">Glasses:</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" formControlName="Glasses"
+                                                                class="form-control shadow-none" id="Glasses" placeholder="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <label for="OrbitAdnexa"
+                                                            class="col-sm-4 col-form-label">Orbit & Adnexa:</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" formControlName="OrbitAdnexa"
+                                                                class="form-control shadow-none" id="OrbitAdnexa" placeholder="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <label for="AntSegment"
+                                                            class="col-sm-4 col-form-label">Ant. Segment:</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" formControlName="AntSegment"
+                                                                class="form-control shadow-none" id="AntSegment" placeholder="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <label for="Fundus"
+                                                            class="col-sm-4 col-form-label">Fundus:</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" formControlName="Fundus"
+                                                                class="form-control shadow-none" id="Fundus" placeholder="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <label for="SpecialTests"
+                                                            class="col-sm-4 col-form-label">Special Tests:</label>
+                                                        <!-- <div class="col-sm-8">
+                                                            <input type="text" formControlName="SpecialTests"
+                                                                class="form-control shadow-none" id="SpecialTests" placeholder="">
+                                                        </div> -->
+                                                    </div>
+                                                    <div class="row">
+                                                        <label for="I.O.P"
+                                                            class="col-sm-4 col-form-label">I.O.P:</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" formControlName="I.O.P"
+                                                                class="form-control shadow-none" id="I.O.P" placeholder="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <label for="SacTest"
+                                                            class="col-sm-4 col-form-label">Sac Test:</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" formControlName="SacTest"
+                                                                class="form-control shadow-none" id="SacTest" placeholder="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <label for="Comments"
+                                                            class="col-sm-4 col-form-label">Comments:</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" formControlName="Comments"
+                                                                class="form-control shadow-none" id="Comments" placeholder="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+        <div class="sidenav mySidenav" style="position: relative;">
+            <a id="save" (click)="Save()"><i class="fa fa-save mr-3"></i>Save</a>
+            <a id="print" (click)="GeneratePDF()"><i class="fa fa-print mr-3"></i>Print</a>
+            <a id="backtolist" [routerLink]="['/home/Prescription/NewPatientList']"><i class="fa fa-arrow-left mr-3"
+                    aria-hidden="true"></i>Back to list</a>
+        </div>
+
+    </div>
+</section>

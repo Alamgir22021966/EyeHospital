@@ -1,0 +1,30 @@
+import {enableProdMode} from '@angular/core';
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+import {Gatekeeper} from 'gatekeeper-client-sdk';
+
+import {AppModule} from './app/app.module';
+import {environment} from './environments/environment';
+
+export function getBaseUrl() {
+    return document.getElementsByTagName('base')[0].href;
+  }
+  
+  const providers = [
+    { provide: 'BASE_URL', useFactory: getBaseUrl, deps: [] }
+  ];
+
+if (environment.production) {
+    enableProdMode();
+}
+
+(window as any).PF = {
+    config: {
+        mode: 'bs4'
+    }
+};
+
+Gatekeeper.initialize('9966bf1b-5da5-4b55-9301-86f9f0c77aaf');
+
+platformBrowserDynamic()
+    .bootstrapModule(AppModule)
+    .catch((err) => console.error(err));

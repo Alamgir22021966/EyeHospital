@@ -1,0 +1,100 @@
+// Common Slylings
+
+.container {
+    margin-top: 3px;
+}
+
+// .card-header {
+//     background-color: rgba(255,255,255);
+// }
+
+.error {
+    margin-top: 1px;
+    background: yellow;
+    padding: 3px;
+    // display: inline-block;
+    display: block;
+    font-size: 14px;
+    margin-bottom: 1px;
+}
+
+.no-padding {
+    padding: 0px;
+}
+
+.left-padding {
+    padding-left: 8px;
+}
+
+.no-padding-right {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+button {
+    height: 33px;
+    color: white;
+    // color: #337AB7;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+.modal-title {
+    margin: 0;
+    line-height: 1.42857143;
+    font-size: 24px;
+    text-align: center;
+    font-weight: 500;
+    // color: white;
+    color: #337AB7;
+}
+
+.modal-header {
+    padding-left: 20px;
+    height: 50px;
+    // background-color: #337AB7;
+    //background: linear-gradient(to bottom, #00b8fe, #0da0ec);
+    background: linear-gradient(to bottom, #ffffff, #ffffff);
+}
+
+.modal-footer {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.input-group-text {
+    display: flex;
+    align-items: center;
+    padding: 0.375 rem 0.75 rem;
+    // font-size: 1rem;
+    // font-weight: 300;
+    line-height: 1.5;
+    color: white;
+    text-align: center;
+    white-space: nowrap;
+    // background-color: white;
+    background: linear-gradient(to bottom, #00B8FE, #0DA0EC);
+    // border: 5 px solid rgb(223, 33, 33);
+    border-color: green;
+    border-radius: 0.25 rem;
+    // background: linear-gradient(to bottom, #00B8FE, #0DA0EC);
+}
+
+.input-group > .form-control, .input-group > .form-select {
+    position: relative;
+    flex: 1 1 auto;
+    width: 1%;
+    min-width: 0;
+    border-right-color: white;
+}
+
+.gradeient {
+    height: 400px;
+    background: linear-gradient(to bottom, white, #f5f5f5);
+}
+
+select {
+    font-size: 12px;
+    font-weight: 500;
+    font-family: 'Courier New', Courier, monospace;
+}

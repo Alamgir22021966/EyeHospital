@@ -1,0 +1,36 @@
+<pf-dropdown hide-arrow class="user-menu">
+    <div slot="button">
+        <a class="nav-link">
+            <pf-image [src]="user.picture" fallback-src="assets/img/user2-160x160.jpg" class="user-image-small"
+                width="25" height="25" alt="User Image" rounded></pf-image>
+            <!-- <small>
+                <span> {{FullName | titlecase}} </span>
+            </small> -->
+        </a>
+    </div>
+    <div slot="menu">
+        <li class="user-header">
+
+            <pf-image [src]="user.picture" fallback-src="assets/img/user2-160x160.jpg" class="user-image-big"
+                alt="User Image" width="90" height="90" rounded></pf-image>
+
+            <small class="mt-4">
+                <!-- <span> {{FullName | titlecase}} </span> -->
+                <span style="font-variant: small-caps;font-size: 18px;"> {{FullName}} </span>
+            </small>
+
+            <p>
+                <span>{{ user.email }}</span>
+                <small>
+                    <span>Member since </span>
+                    <span>{{ STARTDATE }}</span>
+                </small>
+            </p>
+        </li>
+
+        <li class="user-footer gradeient">
+            <a (click)="logout()" class="btn btn-default float-right" style="color: #0da0ec; font-weight: 500;font-variant: small-caps;">Sign
+                Out</a>
+        </li>
+    </div>
+</pf-dropdown>

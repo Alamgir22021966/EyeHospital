@@ -1,0 +1,72 @@
+@import "_styles.scss";
+@import "_stylesautocomplete.scss";
+@import "_swal2.scss";
+
+input {
+  height: 32px;
+}
+
+.card .card-body {
+  padding: 2px;
+}
+
+.mySidenav a {
+  position: absolute;
+  right: -85px;
+  transition: 0.3s;
+  // padding: 10px;
+  padding-left: 8px;
+  padding-top: 10px;
+  width: 110px;
+  height: 40px;
+  text-decoration: none;
+  font-size: 14px;
+  color: white;
+  border-radius: 5px 0px 0px 5px;
+  // text-align: center;
+  vertical-align: middle;
+}
+
+.mySidenav a:hover {
+  right: -10px;
+}
+
+.mySidenav a:hover xx {
+  margin-right: 10px;
+}
+
+#save {
+  top: 159px;
+  background-image: linear-gradient(90deg, #0072ff 0%, #00d4ff 100%);
+}
+
+#print {
+  top: 200px;
+  background-image: linear-gradient(90deg, #0072ff 0%, #00d4ff 100%);
+}
+
+#backtolist {
+  top: 241px;
+  background-image: linear-gradient(90deg, #0072ff 0%, #00d4ff 100%);
+}
+
+.chk {
+  text-align: center !important;
+  padding-top: 6px !important;
+}
+
+input[type='checkbox'] {
+  width: 17px;
+  height: 17px;
+  accent-color: red;
+}
+
+.row {
+  padding-bottom: 1px;
+}
+
+label {
+  padding-left: 5px;
+  height: 32px;
+  font-weight: 400 !important;
+}

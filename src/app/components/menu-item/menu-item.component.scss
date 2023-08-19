@@ -1,0 +1,55 @@
+:host {
+    cursor: pointer;
+}
+
+
+.nav-link {
+    width: 245px !important;
+    position: relative;
+    padding-top: 6px;
+    margin-bottom: 5px;
+    padding-left: 5px;
+    margin-right: 1px;
+    & p {
+        // color: #fff;
+        color: #000;
+        font-size: 18px;
+        font-weight: 400;
+        // margin-top: -5px !important;
+    }
+}
+
+a.nav-link {
+padding-right: 1px;
+padding-bottom: 5px;
+}
+
+.nav-item {
+    width: 242px !important;
+    
+    & .nav-link p {
+        // color: #ffffff !important;
+        color: #000;
+        font-size: 16px !important;
+        font-weight: 400;
+    }
+}
+
+.fa-angle-left:before {
+    content: "\f104";
+    font-size: 20px;
+    // color: #fff;
+    color: #000;
+}
+
+.nav-icon {
+    // color:#fff;
+    color:#000;
+}
+
+.nav-sidebar a>.p.active {
+    // background-color: #007bff;
+    background-color: #fffeee;
+    // background-color: #04AA6D;
+
+}

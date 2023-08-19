@@ -1,0 +1,113 @@
+<div class="modal-header" style="padding-top: 10px;">
+    <h3 class="modal-title pull-left">{{title}}</h3>
+    <!-- <button type="button" class="close pull-right" style="color: #337AB7;" aria-label="Close"
+        (click)="bsModalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+    </button> -->
+</div>
+<div class="modal-body">
+    <form [formGroup]="form" autocomplete="off">
+        <div class="row no-gutters">
+            <div class="col-md-12">
+                <div class="form-group row mb-1">
+                    <label for="ApptNo" class="col-sm-4 col-form-label text-right no-padding">Appt. No:</label>
+                    <div class="col-sm-4" style="padding-right: 1px;">
+                        <input type="text" formControlName="ApptNo" class="form-control shadow-none" id="ApptNo"
+                            placeholder="" [ngClass]="{ 'is-invalid': submitted && f.ApptNo.errors }" readonly="true"
+                            [attr.disabled]="true" style="background: #fffeee;">
+                    </div>
+                </div>
+
+                <div class="form-group row mb-1">
+                    <label for="Date" class="col-sm-4 col-form-label text-right no-padding">Date:</label>
+                    <div class="col-sm-4" style="padding-right: 1px;">
+                        <input type="text" formControlName="ApptDate" class="form-control shadow-none" id="Time"
+                            placeholder="" readonly="true" [attr.disabled]="true" style="background: #fffeee;">
+                    </div>
+                    <div class="col-sm-3" style="padding-left: 0px;">
+                        <input type="text" formControlName="ApptTime" class="form-control shadow-none" id="Time"
+                            placeholder="" readonly="true" [attr.disabled]="true" style="background: #fffeee;">
+                    </div>
+                </div>
+
+                <div class="form-group row mb-1">
+                    <label for="PID" class="col-sm-4 col-form-label text-right no-padding">PID:</label>
+                    <div class="col-sm-4" style="padding-right: 1px;">
+                        <input type="text" formControlName="PID" class="form-control shadow-none" id="PID"
+                            placeholder="" readonly="true" [attr.disabled]="true" style="background: #fffeee;">
+
+                    </div>
+                </div>
+
+                <div class="form-group row mb-1">
+                    <label for="Name" class="col-sm-4 col-form-label text-right no-padding">Name:</label>
+                    <div class="col-sm-7" style="padding-right: 1px;">
+                        <input type="Name" formControlName="Name" class="form-control shadow-none" id="Name"
+                            placeholder="" readonly="true" [attr.disabled]="true" style="background: #fffeee;">
+
+                    </div>
+                </div>
+
+                <div class="form-group row mb-1">
+                    <label for="Sex" class="col-sm-4 col-form-label text-right no-padding">Sex:</label>
+                    <div class="col-sm-3">
+                        <input type="Age" formControlName="Sex" class="form-control shadow-none" id="Age" placeholder=""
+                            readonly="true" [attr.disabled]="true" style="background: #fffeee;">
+                    </div>
+                </div>
+
+                <div class="form-group row mb-1">
+                    <label for="Age" class="col-sm-4 col-form-label text-right no-padding">Age:</label>
+                    <div class="col-sm-3">
+                        <input type="Age" formControlName="Age" class="form-control shadow-none" id="Age" placeholder=""
+                            readonly="true" [attr.disabled]="true" style="background: #fffeee;">
+                    </div>
+                </div>
+
+                <div class="form-group row mb-1">
+                    <label for="Contact" class="col-sm-4 col-form-label text-right no-padding">Contact:</label>
+                    <div class="col-sm-4" style="padding-right: 1px;">
+                        <input type="text" formControlName="Contact" class="form-control shadow-none" id="Contact"
+                            placeholder="" readonly="true" [attr.disabled]="true" style="background: #fffeee;">
+                    </div>
+                </div>
+                <div class="form-group row mb-1">
+                    <label for="Type" class="col-sm-4 col-form-label text-right no-padding">Patient Type:</label>
+                    <div class="col-sm-4" style="padding-right: 1px;">
+                        <input type="text" formControlName="Type" class="form-control shadow-none" id="Patient Type"
+                            placeholder="" readonly="true" [attr.disabled]="true" style="background: #fffeee;">
+                    </div>
+                </div>
+
+                <div class="form-group row mb-1">
+                    <label for="Consultant" class="col-sm-4 col-form-label text-right no-padding">Consultant:</label>
+                    <div class="col-sm-7" style="padding-right: 1px;">
+                        <input type="text" formControlName="Consultant" class="form-control shadow-none" id="Consultant"
+                            placeholder="" readonly="true" [attr.disabled]="true" style="background: #fffeee;">
+                    </div>
+                </div>
+                <div class="form-group row mb-1">
+                    <label for="fees" class="col-sm-4 col-form-label text-right no-padding">fees:</label>
+                    <div class="col-sm-4" style="padding-right: 1px;">
+                        <input #Autofocus type="text" formControlName="fees" class="form-control shadow-none" id="fees"
+                            placeholder="">
+                        <div *ngIf="submitted && f.fees.errors" class="invalid-feedback error">
+                            <div *ngIf="f.fees.errors.required">fees is required</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn blue-gradient px-3" (click)="Save()" style="margin: 0px;"><i
+            class="fa fa-save mr-1"></i>Save</button>
+    <button type="button" class="btn blue-gradient px-2" (click)="bsModalRef.hide()" translate="Cancel"
+        style="margin: 0px;"><i class="fa fa-window-close mr-1"></i>Close
+    </button>
+    <button type="button" class="btn blue-gradient btn-rounded px-3" (click)="GeneratePDF()" style="height: 30px;"
+        [disabled]="!isDisable"><i class="fa fa-print"></i>
+        Print</button>
+</div>

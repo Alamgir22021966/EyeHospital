@@ -1,0 +1,139 @@
+<div class="container container-fluid">
+  <form [formGroup]="UserListForm" autocomplete="off">
+    <div class="row no-gutters">
+      <div class="row mt-2">
+        <div class="col-md-5" style="padding-right: 10px;height: 40px;">
+          <div formGroupName="User">
+            <div class="row no-padding mb-2">
+              <label for="UID" class="col-sm-5 form-label text-right font-weight-light mt-1">User
+                ID:</label>
+              <div class="col-sm-7 no-padding">
+                <ng-autocomplete #ngAutoCompleteStatic [data]="AllUsers | async" (selected)='selectEvent($event)'
+                  formControlName="UID" id="UID" name="UID" [placeholder]="placeholder" [initialValue]=""
+                  [searchKeyword]="keyword" [minQueryLength]="2" notFoundText="Not found"
+                  [itemTemplate]="itemTemplateStatic" [notFoundTemplate]="notFoundTemplate" [debounceTime]="100">
+                </ng-autocomplete>
+                <ng-template #itemTemplateStatic let-item>
+                  <a [innerHTML]="item.Name"></a>
+                </ng-template>
+                <ng-template #notFoundTemplate let-notFound>
+                  <div [innerHTML]="notFound"></div>
+                </ng-template>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3" style="padding-left: 8px;">
+          <button type="button" class=" btn blue-gradient btn-rounded px-3"
+            style="font-variant: small-caps;height: 37px;" (click)="Open()">New User</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body no-padding">
+          <table class="table table-responsive table-bordered">
+            <thead class="thead-light text-center">
+              <tr style="position:sticky;top: 0 ; z-index: 1;font-size: 14px;">
+                <th style="min-width: 35px;z-index: 1;">Slno</th>
+                <th style="min-width: 50px;z-index: 1;">UID</th>
+                <th style="min-width: 150px;z-index: 1;">Name</th>
+                <th style="min-width: 140px;z-index: 1;">Designation</th>
+                <th style="min-width: 200px;">Degrees</th>
+                <th style="min-width: 90px;">Mobile</th>
+                <th style="min-width: 180px;">Email</th>
+                <th style="min-width: 100px;">Login ID</th>
+                <th style="min-width: 100px;">Password</th>
+                <th style="min-width: 90px;">Birth Date</th>
+                <th style="min-width: 110px;">START DATE</th>
+                <th style="min-width: 120px;">National ID</th>
+                <th style="min-width: 150px;">ROLE</th>
+                <th style="min-width: 40px;">Status</th>
+                <th class="text-center" style="min-width: 55px;position: sticky; right: 0; font-size: 14px;">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr formArrayName="UserList" *ngFor="let item of UserList.controls; let i = index;">
+                <td class="text-right text-center" [ngStyle]="setStyles(i)">
+                  {{i+1}}
+                </td>
+                <td class="no-padding" formGroupName={{i}}>
+                  <input type="text" formControlName="UID"
+                    class="form-control form-control-sm shadow-none no-border text-left" readonly="true"
+                    [attr.disabled]="true" [ngStyle]="setStyles(i)">
+                </td>
+                <td class="no-padding" formGroupName={{i}}>
+                  <input type="text" formControlName="UserName"
+                    class="form-control form-control-sm shadow-none no-border text-left" readonly="true"
+                    [attr.disabled]="true" [ngStyle]="setStyles(i)">
+                </td>
+                <td class="no-padding" formGroupName={{i}}>
+                  <input type="text" formControlName="Designation"
+                    class="form-control form-control-sm shadow-none no-border" readonly="true" [attr.disabled]="true"
+                    [ngStyle]="setStyles(i)">
+                </td>
+                <td class="no-padding" formGroupName={{i}}>
+                  <input type="text" formControlName="Degrees"
+                    class="form-control form-control-sm shadow-none no-border bg-white" readonly="true"
+                    [attr.disabled]="true">
+                </td>
+                <td class="no-padding" formGroupName={{i}}>
+                  <input type="text" formControlName="Mobile"
+                    class="form-control form-control-sm shadow-none no-border bg-white" readonly="true"
+                    [attr.disabled]="true">
+                </td>
+                <td class="no-padding" formGroupName={{i}}>
+                  <input type="text" formControlName="Email"
+                    class="form-control form-control-sm shadow-none no-border bg-white" readonly="true"
+                    [attr.disabled]="true">
+                </td>
+                <td class="no-padding" formGroupName={{i}}>
+                  <input type="text" formControlName="LoginID"
+                    class="form-control form-control-sm shadow-none no-border text-center bg-white" readonly="true"
+                    [attr.disabled]="true">
+                </td>
+                <td class="no-padding" formGroupName={{i}}>
+                  <input type="text" formControlName="Password" class="form-control form-control-sm no-border bg-white"
+                    readonly="true" [attr.disabled]="true">
+                </td>
+                <td class="no-padding" formGroupName={{i}}>
+                  <input type="text" formControlName="DateofBirth"
+                    class="form-control form-control-sm shadow-none no-border bg-white" readonly="true"
+                    [attr.disabled]="true">
+                </td>
+                <td class="no-padding" formGroupName={{i}}>
+                  <input type="text" formControlName="STARTDATE"
+                    class="form-control form-control-sm shadow-none no-border text-center bg-white" readonly="true"
+                    [attr.disabled]="true">
+                </td>
+                <td class="no-padding" formGroupName={{i}}>
+                  <input type="text" formControlName="NationalID"
+                    class="form-control form-control-sm no-border bg-white" readonly="true" [attr.disabled]="true">
+                </td>
+                <td class="no-padding" formGroupName={{i}}>
+                  <input type="text" formControlName="ROLE"
+                    class="form-control form-control-sm shadow-none no-border bg-white" readonly="true"
+                    [attr.disabled]="true">
+                </td>
+                <td formGroupName={{i}} class="chk no-padding">
+                  <input type="checkbox" formControlName="Status"
+                    *ngIf="UserList.controls[i].get('UID').value !== '' && UserList.controls[i].get('UID').value !== null">
+                </td>
+
+                <td class="no-padding text-center" style="position: sticky; right: 0;"
+                  *ngIf="UserList.controls[i].get('UserName').value !== '' && UserList.controls[i].get('UserName').value !== null">
+                  <button type="button" class="btn blue-gradient btn-rounded px-1"
+                    (click)="Delete(i, UserList.controls[i].get('UID').value)"><i class="fa fa-trash"
+                      title="Delete"></i></button>
+                  <button type="button" class="btn blue-gradient btn-rounded px-1"
+                    (click)="openModal(i, UserList.controls[i].get('UID').value)"><i class="fa fa-edit"
+                      title="Edit"></i></button>
+                </td>
+
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

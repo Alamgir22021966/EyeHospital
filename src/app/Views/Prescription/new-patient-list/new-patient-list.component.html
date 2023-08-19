@@ -1,0 +1,135 @@
+<div class="container container-flex" style="padding-right: 7px;">
+    <form [formGroup]="PatientListForm" autocomplete="off">
+        <div class="shadow-sm card">
+            <div class="card-body gradeient2" style="padding-bottom: 2px;">
+                <div class="col-md-8 offset-2" style="padding-right: 2px;height: 40px;">
+                    <div formGroupName="Patient">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="row no-padding mb-2">
+                                    <label for="Contact"
+                                        class="col-sm-5 form-label text-right font-weight-light mt-1">PID:</label>
+                                    <div class="col-sm-6 no-padding">
+                                        <ng-select id="PID" class="custom" formControlName="PID" [clearable]="false"
+                                            [openOnEnter]="false" style="font-size: 12px;">
+                                            <ng-option
+                                                *ngFor="let item of AllNewPID | async as AllNewPID; let i = index"
+                                                [value]="item">
+                                                {{item}}
+                                            </ng-option>
+                                        </ng-select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="row" *ngIf="!isConsultant">
+                                    <label for="Consultant"
+                                        class="col-sm-4 col-form-label text-right no-padding">Consultant:</label>
+                                    <div class="col-sm-8">
+                                        <ng-select formControlName="Consultant" class="shadow-none custom">
+                                            <ng-option *ngFor="let consultants of AllConsultants | async; let i = index"
+                                                [value]="consultants">
+                                                {{consultants}}
+                                            </ng-option>
+                                        </ng-select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <table class="table table-responsive table-bordered table-sm font-weight-light"
+                    formArrayName="PatientList">
+                    <thead class="thead-light text-center">
+                        <tr>
+                            <th style="min-width: 40px;">Slno</th>
+                            <th style="min-width: 90px;">Apptno</th>
+                            <th style="min-width: 90px;">PID</th>
+                            <th style="min-width: 190px;">Name</th>
+                            <th style="min-width: 70px;">Sex</th>
+                            <th style="min-width: 70px;">Age</th>
+                            <th style="min-width: 115px;">Contact</th>
+                            <th style="min-width: 90px;">Date</th>
+                            <th style="min-width: 50px;">Time</th>
+                            <th style="min-width: 70px;line-height: 1.1;">Patient Type</th>
+                            <th style="min-width: 50px;">Status</th>
+                            <th class="text-center" style="min-width: 30px;">#</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of PatientList.controls; let i = index;" [formGroupName]="i"
+                            style="font-size: 13px;">
+                            <td class="text-right" style="padding-right: 10px !important;color: #dc3545;">
+                                {{i+1}}
+                            </td>
+                            <td class="no-padding">
+                                <input type="text" formControlName="ApptNo"
+                                    class="form-control form-control-sm shadow-none no-border text-left bg-white"
+                                    readonly="true" [attr.disabled]="true">
+                            </td>
+                            <td class="no-padding">
+                                <input type="text" formControlName="PID"
+                                    class="form-control form-control-sm shadow-none no-border text-left bg-white"
+                                    readonly="true" [attr.disabled]="true">
+                            </td>
+                            <td class="no-padding">
+                                <input type="text" formControlName="Name"
+                                    class="form-control form-control-sm shadow-none no-border bg-white" readonly="true"
+                                    [attr.disabled]="true">
+                            </td>
+                            <td class="no-padding">
+                                <input type="text" formControlName="Sex"
+                                    class="form-control form-control-sm shadow-none no-border bg-white" readonly="true"
+                                    [attr.disabled]="true">
+                            </td>
+                            <td class="no-padding">
+                                <input type="text" formControlName="Age"
+                                    class="form-control form-control-sm shadow-none no-border text-center bg-white"
+                                    readonly="true" [attr.disabled]="true">
+                            </td>
+                            <td class="no-padding">
+                                <input type="text" formControlName="Contact"
+                                    class="form-control form-control-sm no-border bg-white" readonly="true"
+                                    [attr.disabled]="true">
+                            </td>
+                            <td class="no-padding">
+                                <input type="text" formControlName="Date"
+                                    class="form-control form-control-sm shadow-none no-border bg-white" readonly="true"
+                                    [attr.disabled]="true">
+                            </td>
+                            <td class="no-padding">
+                                <input type="text" formControlName="Time"
+                                    class="form-control form-control-sm shadow-none no-border bg-white" readonly="true"
+                                    [attr.disabled]="true">
+                            </td>
+                            <td class="no-padding">
+                                <input type="text" formControlName="Type"
+                                    class="form-control form-control-sm shadow-none no-border bg-white" readonly="true"
+                                    [attr.disabled]="true">
+                            </td>
+                            <td class="chk no-padding">
+                                <input type="checkbox" formControlName="Status"
+                                    *ngIf="PatientList.controls[i].get('PID').value !== '' && PatientList.controls[i].get('PID').value !== null">
+                            </td>
+                            <td class="no-padding text-center"
+                                *ngIf="PatientList.controls[i].get('PID').value !== '' && PatientList.controls[i].get('PID').value !== null">
+                                <!-- <button type="button" class="btn blue-gradient btn-rounded px-1"
+                                        (click)="Delete(i, PatientList.controls[i].get('PID').value)"><i
+                                            class="fa fa-trash" title="Delete"></i></button> -->
+                                <button type="button" class="btn blue-gradient btn-rounded px-1"
+                                    (click)="openModal(i, PatientList.controls[i].get('ApptNo').value, PatientList.controls[i].get('PID').value)"><i
+                                        class="fa fa-edit" title="Prescription"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </form>
+</div>

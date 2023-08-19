@@ -1,0 +1,53 @@
+
+<div class="shadow-sm card">
+    <div class="card-body">
+      <form [formGroup]="loginForm" autocomplete="off">
+  
+        <div class="row justify-content-center align-self-center" style="margin-bottom: 20px;">
+          <div class="col-12 text-center">
+              <!-- <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-login-form/lotus.png" style="width: 185px; height: 225px;" alt="logo"> -->
+              <img ngSrc="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-login-form/lotus.png" width="185" height="225" alt="logo" priority="high">
+          </div>
+        </div>
+  
+        <div class="col-md-10 mx-auto">
+          <div class="form-group has-feedback">
+            <input type="text" formControlName="LoginID" class="form-control"
+              style="position: relative; padding-left: 35px;" name="LoginID" placeholder="User name" autocomplete="off"
+              autofocus [ngClass]="{ 'is-invalid': submitted && f.LoginID.errors }" />
+            <div *ngIf="submitted && f.LoginID.errors" class="invalid-feedback error">
+              <div *ngIf="f.LoginID.errors.required">Username is required</div>
+            </div>
+            <span class="fa fa-user spanStyle"></span>
+            
+          </div>
+        </div>
+        <div class="col-md-10 mx-auto">
+          <div class="form-group has-feedback">
+            <input type="password" formControlName="Password" class="form-control form-control-md"
+              style="position: relative; padding-left: 35px;" name="PassWord" placeholder="Password"
+              autocomplete="current-password" [ngClass]="{ 'is-invalid': submitted && f.Password.errors }" />
+            <div *ngIf="submitted && f.Password.errors" class="invalid-feedback error">
+              <div *ngIf="f.Password.errors.required">Password is required</div>
+            </div>
+            <span class="fa fa-lock spanStyle"></span>
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="col-md-12 text-center mt-2" style="margin-bottom: 10px;">
+              <button type="button" id="Signin" class="btn btn-primary fa-lg gradient-custom-2 mb-3 mt-2 py-2 px-4"
+              style="font-size: 18px;color: white; height: 35px;font-variant: small-caps; " mdbRippleRadius (click)="onSubmit()">Sign
+              in</button>
+          </div>
+        </div>
+      </form>
+      <ngx-spinner bdColor="rgba(255,255,255,0.5)" size="small" color="#cc2222" type="ball-spin-clockwise-fade"
+        [fullScreen]="false">
+        <p style="color: #cc2222; font-size: 22px;"> Loading... </p>
+      </ngx-spinner>
+    </div>
+  </div>
+
+
+

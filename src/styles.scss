@@ -1,0 +1,96 @@
+/* You can add global styles to this file, and also import other style files */
+// @import '~bootstrap/scss/bootstrap';
+
+/* Importing Bootstrap SCSS file. */
+// @import '~bootstrap/scss/bootstrap';
+
+@import url('https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.3.0/css/flag-icon.min.css');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700');
+
+@import '~admin-lte/plugins/fontawesome-free/css/all.min.css';
+@import '~admin-lte/plugins/icheck-bootstrap/icheck-bootstrap.min.css';
+@import '~admin-lte/dist/css/adminlte.min.css';
+
+@import "./node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import 'ngx-toastr/toastr';
+@import "~@ng-select/ng-select/themes/default.theme.css";
+
+
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+input.ng-valid,
+input.ng-invalid,
+textarea.ng-valid,
+textarea.ng-invalid,
+select.ng-valid,
+select.ng-invalid,
+ng-select.ng-valid,
+ng-select.ng-invalid,
+ng-autocomplete.ng-valid {
+    border-color: #28a745;
+}
+
+.bs-datepicker-container {
+    padding: 5px;
+}
+
+.bs-datepicker-body {
+    padding: 5px;
+}
+
+.form-control:focus {
+    color: #212529;
+    background-color: #fff;
+    // border-color: #86b7fe;
+    border-color: #28a745;
+    outline: 0px;
+    box-shadow: 0 0 0 0.25rem rgb(13 110 253/2%);
+}
+
+input.ng-touched.ng-invalid {
+    border-color: #dc3545;
+}
+
+
+// ::-webkit-scrollbar {
+//     width: 0px;
+//     background: transparent;
+// }
+
+.content {
+    padding: 0 0.5rem;
+}
+
+// Sidebar menu animation
+// Needed for open/close menu animation for menus with child nodes
+.nav .nav-item:not(.menu-open) > .ng-trigger-openClose,
+.nav .nav-item > .ng-trigger-openClose.ng-animating {
+    overflow: hidden;
+    display: block;
+}
+
+// Override original AdminLTE transform
+.nav-sidebar .menu-is-opening > .nav-link i.right,
+.nav-sidebar .menu-is-opening > .nav-link svg.right,
+.nav-sidebar .menu-open > .nav-link i.right,
+.nav-sidebar .menu-open > .nav-link svg.right {
+    transform: none;
+}
+
+
+[class*="sidebar-dark-"] .nav-treeview > .nav-item > .nav-link.active,
+[class*="sidebar-dark-"] .nav-treeview > .nav-item > .nav-link.active:focus,
+[class*="sidebar-dark-"] .nav-treeview > .nav-item > .nav-link.active:hover {
+    background-color: rgba(251, 89, 89, 0.1);
+    color: #fff !important;
+}
+
+.sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active, .sidebar-light-primary .nav-sidebar>.nav-item>.nav-link.active {
+    background-color: #ffffff;
+    // color: #fff;
+}
+

@@ -1,0 +1,38 @@
+.fa-bars {
+    cursor: pointer;
+}
+
+.nav-item {
+    .nav-link {
+        cursor: pointer;
+    }
+}
+
+.nav-item {
+    button.nav-link {
+        outline: none;
+        border: none;
+        background-color: transparent;
+    }
+}
+
+.title {
+    // color: #0DA0EC;
+    color: #cb4545;
+    font-size: 30px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 0px;
+}
+
+// .nav-item .title:hover {
+//     color: #cb4545;
+// }
+
+// .brand-link .pushmenu:hover,
+// .brand-link:hover {
+//     color: #cb4545;
+// }
+
+.main-header {
+    height: 50px;
+}

@@ -1,0 +1,143 @@
+<div class="modal-header" style="padding-top: 10px;">
+    <h3 class="modal-title pull-left">{{title}}</h3>
+    <!-- <button type="button" class="close pull-right" style="color: #337AB7;" aria-label="Close"
+        (click)="bsModalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+    </button> -->
+</div>
+<div class="modal-body">
+    <form [formGroup]="form" autocomplete="off">
+        <div class="row no-gutters">
+            <div class="col-md-12">
+                <div class="form-group row mb-1">
+                    <label for="ApptNo" class="col-sm-4 col-form-label text-right no-padding">Appt. No:</label>
+                    <div class="col-sm-4" style="padding-right: 1px;">
+                        <input type="text" formControlName="ApptNo" class="form-control shadow-none" id="ApptNo"
+                            placeholder="" [ngClass]="{ 'is-invalid': submitted && f.ApptNo.errors }" readonly="true"
+                            [attr.disabled]="true" style="background: #fffeee;">
+                        <div *ngIf="submitted && f.ApptNo.errors" class="invalid-feedback error">
+                            <div *ngIf="f.ApptNo.errors.required">ApptNo is required</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row mb-1">
+                    <label for="Date" class="col-sm-4 col-form-label text-right no-padding">Date:</label>
+                    <div class="col-sm-4" style="padding-right: 1px;">
+                        <input id="Date" type="text" class="form-control shadow-none text-center"
+                            formControlName="ApptDate" placeholder="DD-MMM-YYYY" bsDatepicker placement="bottom"
+                            [bsConfig]="datePickerConfig" style="font-size: 12px;"
+                            [ngClass]="{ disabled: !f.ApptDate.valid}">
+                        <div *ngIf="submitted && f.ApptDate.errors" class="invalid-feedback error">
+                            <div *ngIf="f.ApptDate.errors.required">Date is required</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3" style="padding-left: 0px;">
+                        <input #Autofocus type="time" formControlName="ApptTime" class="form-control shadow-none" id="Time"
+                            placeholder="" [ngClass]="{ 'is-invalid': submitted && f.ApptTime.errors }">
+                        <div *ngIf="submitted && f.Time.errors" class="invalid-feedback error">
+                            <div *ngIf="f.ApptTime.errors.required">Time is required</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row mb-1">
+                    <label for="Contact" class="col-sm-4 col-form-label text-right no-padding">Contact:</label>
+                    <div class="col-sm-4" style="padding-right: 1px;">
+                        <input type="text" formControlName="Contact" class="form-control shadow-none" id="Contact" 
+                            placeholder="" [ngClass]="{ 'is-invalid': submitted && f.Contact.errors }">
+                        <div *ngIf="submitted && f.Contact.errors" class="invalid-feedback error">
+                            <div *ngIf="f.Contact.errors.required">Contact is required</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row mb-1">
+                    <label for="PID" class="col-sm-4 col-form-label text-right no-padding">PID:</label>
+                    <div class="col-sm-4" style="padding-right: 1px;">
+                        <input type="text" formControlName="PID" class="form-control shadow-none" id="PID"
+                            placeholder="" [ngClass]="{ 'is-invalid': submitted && f.PID.errors }" readonly="true"
+                            [attr.disabled]="true" style="background: #fffeee;">
+                        <div *ngIf="submitted && f.PID.errors" class="invalid-feedback error">
+                            <div *ngIf="f.PID.errors.required">PID is required</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row mb-1">
+                    <label for="Name" class="col-sm-4 col-form-label text-right no-padding">Name:</label>
+                    <div class="col-sm-7" style="padding-right: 1px;">
+                        <input type="Name" formControlName="Name" class="form-control shadow-none" id="Name"
+                            placeholder="" [ngClass]="{ 'is-invalid': submitted && f.Name.errors }">
+                        <div *ngIf="submitted && !f.Name.valid && f.Name.touched">
+                            <div *ngIf="submitted && f.Name.errors" class="invalid-feedback error">
+                                <div *ngIf="f.Name.errors.required">Name is required</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row mb-1">
+                    <label for="Sex" class="col-sm-4 col-form-label text-right no-padding">Sex:</label>
+                    <div class="col-sm-3">
+                        <ng-select formControlName="Sex" class="shadow-none">
+                            <ng-option *ngFor="let item of sex | async; let i = index" [value]="item">
+                                {{item}}
+                            </ng-option>
+                        </ng-select>
+                        <div *ngIf="submitted && f.Sex.errors" class="invalid-feedback error">
+                            <div *ngIf="f.Sex.errors.required">Sex is required</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row mb-1">
+                    <label for="Age" class="col-sm-4 col-form-label text-right no-padding">Age:</label>
+                    <div class="col-sm-3">
+                        <input type="Age" formControlName="Age" class="form-control shadow-none" id="Age"
+                            placeholder="">
+                    </div>
+                </div>
+
+                
+
+                <div class="form-group row mb-1">
+                    <label for="Type" class="col-sm-4 col-form-label text-right no-padding">Patient Type:</label>
+                    <div class="col-sm-3">
+                        <ng-select formControlName="Type" class="shadow-none">
+                            <ng-option *ngFor="let item of Type | async; let i = index" [value]="item">
+                                {{item}}
+                            </ng-option>
+                        </ng-select>
+                        <div *ngIf="submitted && f.Type.errors" class="invalid-feedback error">
+                            <div *ngIf="f.Type.errors.required">Type is required</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row mb-1">
+                    <label for="Consultant" class="col-sm-4 col-form-label text-right no-padding">Consultant:</label>
+                    <div class="col-sm-7" style="padding-right: 1px;">
+                        <ng-select formControlName="Consultant" class="shadow-none">
+                            <ng-option *ngFor="let consultants of AllConsultants | async; let i = index"
+                                [value]="consultants">
+                                {{consultants}}
+                            </ng-option>
+                        </ng-select>
+
+                        <div *ngIf="submitted && f.Consultant.errors" class="invalid-feedback error">
+                            <div *ngIf="f.Consultant.errors.required">Consultant is required</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn blue-gradient px-3" (click)="Save()" style="margin: 0px;"><i
+            class="fa fa-save mr-1"></i>Save</button>
+    <button type="button" class="btn blue-gradient px-2" (click)="bsModalRef.hide()" translate="Cancel"
+        style="margin: 0px;"><i class="fa fa-window-close mr-1"></i>Close
+    </button>
+</div>

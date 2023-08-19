@@ -1,0 +1,143 @@
+<div class="content-header">
+    <div class="container-fluid" style="padding-left: 1px;padding-right: 1px;">
+        <form [formGroup]="form" autocomplete="off">
+            <div class="d-flex justify-content-center mt-2">
+                <div class="col-sm-8">
+                    <div class="row no-padding">
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <label for="Date" class="col-sm-6 col-form-label text-right no-padding">Appointment
+                                    Date:</label>
+                                <div class="col-sm-6" style="padding-right: 1px;">
+                                    <input #Autofocus id="ApptDate" type="text"
+                                        class="form-control shadow-none text-center" formControlName="ApptDate"
+                                        placeholder="DD-MMM-YYYY" bsDatepicker placement="bottom"
+                                        [bsConfig]="datePickerConfig" style="font-size: 12px;">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="row" *ngIf="!isConsultant">
+                                <label for="Consultant"
+                                    class="col-sm-4 col-form-label text-right no-padding">Consultant:</label>
+                                <div class="col-sm-8">
+                                    <ng-select formControlName="Consultant" class="shadow-none custom">
+                                        <ng-option *ngFor="let consultants of AllConsultants | async; let i = index"
+                                            [value]="consultants">
+                                            {{consultants}}
+                                        </ng-option>
+                                    </ng-select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+
+        <div class="row" style="margin-top: 15px; padding-bottom: 0px;padding-left: 20px; padding-right: 25px;">
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-4 col-6">
+                            <div class="small-box bg-info">
+                                <div class="inner">
+                                    <h3>{{TotalAppointment}}</h3>
+
+                                    <p>Total Appointment</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-bag"></i>
+                                </div>
+
+                                <a class="small-box-footer" data-bs-toggle="collapse" href="#collapseExample"
+                                    role="button" aria-expanded="false" aria-controls="collapseExample">
+                                    More info <i class="fas fa-arrow-circle-right"></i>
+                                </a>
+
+                                <div class="collapse" id="collapseExample">
+                                    <div class="card card-body" style="color: hotpink;">
+                                        Some placeholder content for the collapse component. This panel is hidden by
+                                        default but revealed when the user activates the relevant trigger.
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-6">
+                            <div class="small-box bg-success">
+                                <div class="inner">
+                                    <h3>{{TotalPresent}}</h3>
+
+                                    <p>Total Present</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-stats-bars"></i>
+                                </div>
+                                <!-- <a href="#" class="small-box-footer">More info <i
+                                        class="fas fa-arrow-circle-right"></i></a> -->
+
+                                <a class="small-box-footer" data-bs-toggle="collapse" href="#collapseExample1"
+                                    role="button" aria-expanded="false" aria-controls="collapseExample">
+                                    More info <i class="fas fa-arrow-circle-right"></i>
+                                </a>
+
+                                <div class="collapse" id="collapseExample1">
+                                    <div class="card card-body" style="color: hotpink;">
+                                        Some placeholder content for the collapse component. This panel is hidden by
+                                        default but revealed when the user activates the relevant trigger.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-6">
+                            <div class="small-box bg-warning">
+                                <div class="inner">
+                                    <h3>{{NewPatient}}</h3>
+
+                                    <p>New Patient</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-person-add"></i>
+                                </div>
+                                <!-- <a href="#" class="small-box-footer">More info <i
+                                        class="fas fa-arrow-circle-right"></i></a> -->
+                                <a class="small-box-footer" data-bs-toggle="collapse" href="#collapseExample2"
+                                    role="button" aria-expanded="false" aria-controls="collapseExample">
+                                    More info <i class="fas fa-arrow-circle-right"></i>
+                                </a>
+
+                                <div class="collapse" id="collapseExample2">
+                                    <div class="card card-body" style="color: hotpink;">
+                                        Some placeholder content for the collapse component. This panel is hidden by
+                                        default but revealed when the user activates the relevant trigger.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="col-lg-4 col-6">
+                            <div class="small-box bg-danger">
+                                <div class="inner">
+                                    <h3>65</h3>
+
+                                    <p>Unique Visitors</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-pie-graph"></i>
+                                </div>
+                                <a href="#" class="small-box-footer">More info <i
+                                        class="fas fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+    </div>
+</div>
+
+<!-- <img ngSrc="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-login-form/lotus.png" width="185" height="225" alt="logo" priority="high"> -->
